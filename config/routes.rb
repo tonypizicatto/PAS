@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
 
   get 'dashboard/index'
+  get 'about' => 'dashboard#about'
+
+
+
   root 'dashboard#index'
 
 
