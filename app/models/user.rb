@@ -5,12 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   before_save { self.email = email.downcase }
-  # validates :first_name, :last_name, presence: true, length: { maximum: 50 }
+  validates :first_name, :last_name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 250 },format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
 
 
-  # has_many :tasks, :comments
-  # belongs_to :team
+  has_many :tasks
+  has_many :comments
+  has_many :projects
+  belongs_to :team, optional: true
 end
