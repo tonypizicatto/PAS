@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'user/new'
+  devise_for :user
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tasks, :projects
 
 
   get 'dashboard/index'
   get 'about' => 'dashboard#about'
-  get 'signup'  => 'users#new'
-
+  get 'user' => 'user#index'
 
 
   root 'dashboard#index'
