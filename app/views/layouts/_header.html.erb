@@ -10,6 +10,8 @@
           <% end %></li>
         <li><% if user_signed_in? %>
             <%= link_to "Dashboard", user_path %>
+          <li><%= link_to "Projects", projects_path %></li>
+          <li><%= link_to "Tasks", tasks_path %></li>
           <% else %>
             <%= link_to "Dashboard", root_path %>
           <% end %></li>
