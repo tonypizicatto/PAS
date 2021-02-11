@@ -3,3 +3,5 @@
 <!--<h1>Your tasks: @tasks.user</h1>-->
 <h3>Your ID in system: <%= @user.id %></h3>
 <h3>Your team: "<%= @user.team.name.to_s %>"</h3>
+<h3>Your have projects: "<%= @user.projects.length %>"</h3>
+<h3>Your have tasks: "<%= @user.tasks.length %>"</h3>

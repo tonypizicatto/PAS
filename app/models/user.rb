@@ -11,8 +11,8 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
 
 
-  has_many :tasks
-  has_many :projects, through: :tasks
+  has_many :projects
+  has_many :tasks, through: :projects
   has_many :comments
   belongs_to :team, optional: true
 end

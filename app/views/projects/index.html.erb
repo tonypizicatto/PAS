@@ -1,1 +1,7 @@
-<h3>All your projects: <%= @projects.inspect %></h3>
+<h3>All your projects:</h3>
+<h4><% @projects.each do |t| %>
+    <li><%= link_to t.name, project_path(t) %></li>
+  <% end %></h4>
+--------------------------------------------------------------
+<h5><%= link_to 'Create new project', new_project_path %></h5>
+<%#= @projects.inspect %>
