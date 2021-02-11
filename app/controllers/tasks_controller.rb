@@ -5,6 +5,10 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks
   end
 
+  def all_tasks
+    @tasks = current_user.tasks
+  end
+
   def new
     @tasks = Task.new
   end

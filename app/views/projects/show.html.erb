@@ -3,6 +3,9 @@
 <h4>Summary: <strong><%= @project.summary %></strong></h4>
 <h4>Start date: <strong><%= @project.start_date %></strong></h4>
 <h4>End date: <strong><%= @project.end_date %></strong></h4>
+<h5><%= link_to 'Edit', edit_project_path(@project.id) %></h5>
+<h5><%= link_to 'Delete', @project, :method => :delete, data: {:confirm => "You sure?" } ,
+                :title => "Delete #{@project.name}" %></h5>
 --------------------------------------------------------------
-<h5><%= link_to 'Tasks of this project', [@project, @task] %></h5>
+<h5><%= link_to 'Tasks of this project', project_tasks_path(@project) %></h5>
 
