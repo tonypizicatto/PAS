@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'about' => 'dashboard#about'
   get 'user' => 'user#index'
-  get 'tasks' => 'tasks#all_tasks'
+  get 'tasks' => 'tasks#index'
 
 
   root 'dashboard#index'
