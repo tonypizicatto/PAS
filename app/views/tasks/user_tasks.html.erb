@@ -8,10 +8,7 @@
     <!--    <li><h6>Start date: <strong><%#= t.start_date %></strong></h6></li>-->
     <!--    <li><h6>Period of execution: <strong><%#= t.due_date %></strong></h6></li>-->
     <!--    <li><h6>Estimation: <strong><%#= t.estimation %> hours</strong></h6></li>-->
-    <h6><%= link_to 'More details', project_task_path(@project, t.id) %> </h6>
+    <!--    <h6><%#= link_to 'More details', project_task_path(@project, t.id) %> </h6>-->
     <p>---------</p>
   <% end %>
-  <!--  <h5><%#= link_to 'Create new project', new_project_path %></h5>-->
-  <h5><%= link_to 'New task', new_project_task_path(@project) %></h5>
-  <h5><%= link_to 'Back', project_path(@project) %></h5>
   <p><%= paginate @tasks %></p>

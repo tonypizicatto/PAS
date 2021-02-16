@@ -5,15 +5,11 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-
   get 'dashboard/index'
   get 'about' => 'dashboard#about'
   get 'user' => 'user#index'
-  get 'tasks' => 'tasks#index'
-
+  get 'user_tasks' => 'tasks#user_tasks'
 
   root 'dashboard#index'
-
-
 
 end

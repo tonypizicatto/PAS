@@ -11,13 +11,13 @@
   </div>
 
   <div class="field">
-  <%= f.label :start_date %><br>
-  <%= f.date_select :start_date %>
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
   </div>
 
   <div class="field">
-  <%= f.label :end_date %><br>
-  <%= f.date_select :end_date %>
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
   </div>
 
   <div class="field">
@@ -25,7 +25,7 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
-<!--  summary: string, start_date: datetime, end_date: datetime-->
+  <!--  summary: string, start_date: datetime, end_date: datetime-->
 
   <div class="actions">
     <%= f.submit "#{ @project.new_record? ? 'Create' : 'Edit'}" %>

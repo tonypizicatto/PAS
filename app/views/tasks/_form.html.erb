@@ -1,0 +1,44 @@
+<%= form_for([@project, @task]) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :due_date %><br>
+    <%= f.date_select :due_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estimation %><br>
+    <%= f.number_field :estimation, in: 0..10, step: 1 %>
+  </div>
+
+  <div class="field">
+    <br>
+    <%= f.hidden_field :project_id, value: @project.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <!--  content: string, status: string, start_date: datetime, due_date: datetime, estimation: integer project_id: integer, user_id: integer-->
+
+  <div class="actions">
+    <%= f.submit "#{ @task.new_record? ? 'Create' : 'Edit'}" %>
+  </div>
+<% end %>
