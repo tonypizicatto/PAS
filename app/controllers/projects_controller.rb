@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @comments = @project.comments.page(params[:page])
   end
 
   def update

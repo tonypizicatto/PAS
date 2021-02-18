@@ -12,6 +12,11 @@ class User < ApplicationRecord
 
   has_many :projects
   has_many :tasks, through: :projects
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :team, optional: true
+
+  def name
+    first_name + ' ' + last_name
+  end
+
 end

@@ -35,11 +35,13 @@ ActiveRecord::Schema.define(version: 2021_02_17_125823) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.string "user_type"
     t.bigint "user_id"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_type", "user_id"], name: "index_comments_on_user_type_and_user_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
