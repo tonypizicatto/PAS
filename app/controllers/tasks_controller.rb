@@ -24,6 +24,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @comments = @task.comments.page(params[:page])
   end
 
   def update

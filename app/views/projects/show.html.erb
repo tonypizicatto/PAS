@@ -12,8 +12,10 @@
 <h5><%= link_to 'New task', new_project_task_path(@project) %></h5>
 <h5><%= link_to 'Back', projects_path %></h5>
 -----------------------------------------------------------------------------
+<h4>Comments:</h4>
 <ol class="comments">
   <%= render @comments %>
+  <p><%= paginate @comments %></p>
 </ol>
 <!--------------------------------------------------------------------------------->
 <!--<h4>Task list:</h4>-->

@@ -3,12 +3,8 @@
     <li><h6>Id task: <strong><%= t.id %></strong></h6></li>
     <li><h6>Task title: <strong><%= t.title %></strong></h6></li>
     </h3>
-    <!--    <li><h6>Task content: <strong><%#= t.content %></strong></h6></li>-->
-    <!--    <li><h6>Task status: <strong><%#= t.status %></strong></h6></li>-->
-    <!--    <li><h6>Start date: <strong><%#= t.start_date %></strong></h6></li>-->
-    <!--    <li><h6>Period of execution: <strong><%#= t.due_date %></strong></h6></li>-->
-    <!--    <li><h6>Estimation: <strong><%#= t.estimation %> hours</strong></h6></li>-->
-    <!--    <h6><%#= link_to 'More details', project_task_path(@project, t.id) %> </h6>-->
+    <% project_id = t.project_id %>
+    <h6><%= link_to 'More details', project_task_path(project_id, t.id) %> </h6>
     <p>---------</p>
   <% end %>
   <p><%= paginate @tasks %></p>
