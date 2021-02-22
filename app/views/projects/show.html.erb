@@ -17,16 +17,10 @@
   <%= render @comments %>
   <p><%= paginate @comments %></p>
 </ol>
-<!--------------------------------------------------------------------------------->
-<!--<h4>Task list:</h4>-->
-<!--------------------------------------------------------------------------------->
-<%# @project.tasks.each do |t| %>
-<!--  <li><h6>Id task: <strong><%#= t.id %></strong></h6></li>-->
-<!--  <li><h6>Task title: <strong><%#= t.title %></strong></h6></li>-->
-<!--  <li><h6>Task content: <strong><%#= t.content %></strong></h6></li>-->
-<!--  <li><h6>Task status: <strong><%#= t.status %></strong></h6></li>-->
-<!--  <li><h6>Start date: <strong><%#= t.start_date %></strong></h6></li>-->
-<!--  <li><h6>Period of execution: <strong><%#= t.due_date %></strong></h6></li>-->
-<!--  <li><h6>Estimation: <strong><%#= t.estimation %> hours</strong></h6></li>-->
-<!--------------------------------------------------------------------------------->
-<%# end %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="comment_form">
+      <%= render 'comments/comment_form' %>
+    </section>
+  </aside>
+</div>

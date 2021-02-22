@@ -4,5 +4,4 @@ class Project < ApplicationRecord
   has_many :users, :through => :tasks
   has_many :comments, as: :commentable
   paginates_per 1
-  # Project has many comments(polymorphic)
 end

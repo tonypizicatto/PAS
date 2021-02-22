@@ -17,4 +17,10 @@
   <%= render @comments %>
   <p><%= paginate @comments %></p>
 </ol>
-
+<div class="row">
+  <aside class="col-md-4">
+    <section class="comment_form">
+      <%= render 'comments/comment_form' %>
+    </section>
+  </aside>
+</div>

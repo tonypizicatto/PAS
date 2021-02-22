@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
-  paginates_per 1
+  paginates_per 5
 end

@@ -3,8 +3,7 @@
     <li><h6>Id task: <strong><%= t.id %></strong></h6></li>
     <li><h6>Task title: <strong><%= t.title %></strong></h6></li>
     </h3>
-    <% project_id = t.project_id %>
-    <h6><%= link_to 'More details', project_task_path(project_id, t.id) %> </h6>
+    <h6><%= link_to 'More details', project_task_path(t.project_id, t.id) %> </h6>
     <p>---------</p>
   <% end %>
   <p><%= paginate @tasks %></p>
