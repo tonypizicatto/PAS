@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tasks
   end
-  resources :comments, only: [:create, :destroy]
+  resources :comments
 
   get 'dashboard/index'
   get 'about' => 'dashboard#about'

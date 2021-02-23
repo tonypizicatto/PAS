@@ -12,15 +12,9 @@
 <h5><%= link_to 'New task', new_project_task_path(@project) %></h5>
 <h5><%= link_to 'Back', projects_path %></h5>
 -----------------------------------------------------------------------------
-<h4>Comments:</h4>
-<ol class="comments">
+<h3>Comments</h3>
+<ul>
   <%= render @comments %>
   <p><%= paginate @comments %></p>
-</ol>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="comment_form">
-      <%= render 'comments/comment_form' %>
-    </section>
-  </aside>
-</div>
+</ul>
+<%= render "comments/comment_form", commentable_type: "Project", commentable_id: @project.id %>

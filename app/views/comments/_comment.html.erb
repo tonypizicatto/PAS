@@ -1,8 +1,11 @@
-<li id="comment-<%= comment.id %>">
-  <%#= image user %>
-  <span class="user"><%= comment.user.name %></span><br>
-  <span class="content">"<%= comment.content %>"</span><br>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(comment.created_at) %> ago.
-  </span>
+<li>
+  <b><%= comment.user.name %><br></b>
+  "<%= comment.content %>"<br>
+  <h6>Posted <%= time_ago_in_words(comment.created_at) %> ago.</h6>
+  <%= link_to "Reply", comment_path(comment.id) %>
 </li>
+<ul>
+  <% comment.comments.each do |c| %>
+    <%= render c %>
+  <% end %>
+</ul>

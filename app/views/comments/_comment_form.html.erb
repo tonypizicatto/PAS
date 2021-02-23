@@ -1,24 +1,11 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for(Comment.new) do |f| %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new comment..." %>
   </div>
-  <div class="field">
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  </div>
-  <% if @task.blank? %>
-    <div class="field">
-      <%= f.hidden_field :commentable_id, value: @project.id %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :commentable_type, value: "Project" %>
-    </div>
-    <% else %>
-    <div class="field">
-      <%= f.hidden_field :commentable_type, value: "Task" %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :commentable_id, value: @task.id %>
-    </div>
-    <% end %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <%= f.hidden_field :commentable_type, value: commentable_type %>
+    <%= f.hidden_field :commentable_id, value: commentable_id %>
     <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
+

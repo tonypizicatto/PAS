@@ -1,0 +1,3 @@
+<h4>Comment: <strong>"<%= @comment.content %></strong>"</h4>
+<h3>Your reply:</h3>
+<%= render "comments/comment_form", commentable_type: "Comment", commentable_id: @comment.id %>
