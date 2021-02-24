@@ -5,8 +5,12 @@
 <li><h4>Start date: <strong><%= @task.start_date %></strong></h4></li>
 <li><h4>Period of execution: <strong><%= @task.due_date %></strong></h4></li>
 <li><h4>Estimation: <strong><%= @task.estimation %> hours</strong></h4></li></h3>
-<h5><%= link_to 'Edit', edit_project_task_path(@task.project_id) %></h5>
+<% if can? :edit, @task %>
+  <h5><%= link_to 'Edit', edit_project_task_path(@task.project_id) %></h5>
+<% end %>
+<% if can? :delete, @task %>
 <h5><%= link_to 'Delete', [@project, @task], :method => :delete, data: { :confirm => "You sure?" }, :title => "Delete" %></h5>
+<% end %>
 <p>---------</p>
 <%# end %>
 <h5><%= link_to 'New task', new_project_task_path(@project) %></h5>

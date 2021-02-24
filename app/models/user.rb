@@ -19,4 +19,12 @@ class User < ApplicationRecord
     first_name + ' ' + last_name
   end
 
+  def team_name
+    if team == nil
+      'None'
+    else
+      team.name
+    end
+  end
+
 end
