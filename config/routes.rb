@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
   resources :comments
+  resources :teams
 
   get 'dashboard/index'
   get 'about' => 'dashboard#about'

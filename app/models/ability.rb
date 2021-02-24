@@ -10,7 +10,9 @@ class Ability
       if user.admin?
         can :manage, :all
       else
-        can :read, :all
+        can :read, Project
+        can :read, Comment
+        can :read, Task
         can :create, Project
         can :create, Comment
         can :create, Task
