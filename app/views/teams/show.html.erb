@@ -1,0 +1,14 @@
+<h4>Name of team: <strong><%= @team.name %></strong></h4>
+<h4>ID: <strong><%= @team.id %></strong></h4>
+<h4>Users:</h4>
+<li><h5><% @team.users.each do |t| %>
+    <strong>Name: </strong><%= t.name %>
+    <strong>ID: </strong><%= t.id %><br>
+  <% end %></h5></li>
+<% if can? :edit, @team %>
+<h5><%= link_to 'Edit', edit_team_path(@team.id) %></h5>
+<% end %>
+  <% if can? :delete, @team %>
+<h5><%= link_to 'Delete', @team, :method => :delete, data: { :confirm => "You sure?" },
+                :title => "Delete #{@team.name}" %></h5>
+<% end %>

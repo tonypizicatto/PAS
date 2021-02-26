@@ -1,0 +1,16 @@
+<%= form_for(@team) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :users %><br>
+    <%= f.collection_select :user_ids, User.all, :id, :name, { label: "Users" }, { multiple: true } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @team.new_record? ? 'Create' : 'Edit'}" %>
+  </div>
+<% end %>
