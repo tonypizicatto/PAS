@@ -1,10 +1,4 @@
-<li><h4>Id task: <strong><%= @task.id %></strong></h4></li>
-<li><h4>Task title: <strong><%= @task.title %></strong></h4></li>
-<li><h4>Task content: <strong><%= @task.content %></strong></h4></li>
-<li><h4>Task status: <strong><%= @task.status %></strong></h4></li>
-<li><h4>Start date: <strong><%= @task.start_date %></strong></h4></li>
-<li><h4>Period of execution: <strong><%= @task.due_date %></strong></h4></li>
-<li><h4>Estimation: <strong><%= @task.estimation %> hours</strong></h4></li></h3>
+<%= render 'task' %>
 <% if can? :edit, @task %>
   <h5><%= link_to 'Edit', edit_project_task_path(@task.project_id) %></h5>
 <% end %>
@@ -12,7 +6,6 @@
 <h5><%= link_to 'Delete', [@project, @task], :method => :delete, data: { :confirm => "You sure?" }, :title => "Delete" %></h5>
 <% end %>
 <p>---------</p>
-<%# end %>
 <h5><%= link_to 'New task', new_project_task_path(@project) %></h5>
 <h5><%= link_to 'Back', project_tasks_path(@project) %></h5>
 <p>---------</p>

@@ -40,10 +40,6 @@ class TasksController < ApplicationController
     redirect_to project_tasks_path(@project)
   end
 
-  def user_tasks
-    @tasks = current_user.tasks.page(params[:page])
-  end
-
   private
 
   def set_project

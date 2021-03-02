@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   end
   resources :comments
   resources :teams
+  namespace :user do
+    post :tasks, to: 'tasks#index'
+    resources :tasks, only: [:index, :show]
+  end
 
   get 'dashboard/index'
   get 'about' => 'dashboard#about'

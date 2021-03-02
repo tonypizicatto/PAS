@@ -1,0 +1,11 @@
+<h3>
+  <% tasks.each do |t| %>
+    <li><h6>Id task: <strong><%= t.id %></strong></h6></li>
+    <li><h6>Task title: <strong><%= t.title %></strong></h6></li>
+    </h3>
+    <div class="task_show">
+      <h6><%= link_to 'More details', project_task_path(t.project_id, t.id), remote: true %> </h6>
+    </div>
+    <p>---------</p>
+  <% end %>
+  <p><%= paginate tasks %></p>
