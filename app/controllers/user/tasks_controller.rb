@@ -12,7 +12,7 @@ class User::TasksController < ApplicationController
   private
 
   def user_tasks_params
-    params.require('/user/tasks').permit!
+    params.require('/user/tasks').permit(:title, :project_id)
   end
 
 end

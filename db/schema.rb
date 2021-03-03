@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_172925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["name"], name: "index_projects_on_name"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -68,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_172925) do
     t.bigint "project_id"
     t.bigint "user_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
-    t.index ["title"], name: "index_tasks_on_title"
+    t.index ["title", "project_id"], name: "index_tasks_on_title_and_project_id", unique: true
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
