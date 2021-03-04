@@ -1,0 +1,26 @@
+<h3>All users tasks:</h3>
+<h4>
+  <% @users.each do |t| %>
+    <div class="table">
+      <table>
+        <tr>
+          <th>Name:</th>
+          <th>ID:</th>
+          <th>Tasks:</th>
+          <th>Open:</th>
+          <th>In progress:</th>
+          <th>Done:</th>
+        </tr>
+        <tr>
+          <td>"<%= t.first_name %>"</td>
+          <td><%= t.id %></td>
+          <td><%= t.tasks.size %></td>
+          <td><%= t.tasks.open.count %></td>
+          <td><%= t.tasks.in_progress.count %></td>
+          <td><%= t.tasks.done.count %></td>
+        </tr>
+      </table>
+    </div>
+    <p>-----------------------------</p>
+  <% end %></h4>
+<p><%= paginate @users %></p>

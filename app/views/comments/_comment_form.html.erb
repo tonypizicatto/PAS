@@ -4,8 +4,8 @@
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
-    <%= f.hidden_field :commentable_type, value: commentable_type %>
-    <%= f.hidden_field :commentable_id, value: commentable_id %>
-    <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.hidden_field :commentable_type, value: commentable_type %>
+  <%= f.hidden_field :commentable_id, value: commentable_id %>
+  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 

@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     post :tasks, to: 'tasks#index'
     resources :tasks, only: [:index, :show]
   end
+  resources :reports, only: [:index]
 
+  get 'reports/all_users_tasks'
+  get 'reports/tasks_in_projects'
   get 'dashboard/index'
   get 'about' => 'dashboard#about'
   get 'user' => 'user#index'

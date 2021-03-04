@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  paginates_per 3
+  include CanCan::Ability
   has_many :teams
   has_many :tasks, dependent: :destroy
   has_many :users, through: :tasks
@@ -7,5 +9,4 @@ class Project < ApplicationRecord
   validates :start_date, :end_date, presence: true
   validates :name, length: { minimum: 3, maximum: 100 }, uniqueness: true
 
-  paginates_per 1
 end

@@ -11,8 +11,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <!--    <%#= f.label :status %><br>-->
+    <%#= f.text_field :status %>
+    <%= f.radio_button :status, :open %>
+    <%= f.label :status, "Open" %>
+    <%= f.radio_button :status, :in_progress %>
+    <%= f.label :status, "In progress" %>
+    <%= f.radio_button :status, :done %>
+    <%= f.label :status, "Done" %>
   </div>
 
   <div class="field">
@@ -27,7 +33,7 @@
 
   <div class="field">
     <%= f.label :estimation %><br>
-    <%= f.number_field :estimation, in: 0..10, step: 1 %>
+    <%= f.number_field :estimation %>
   </div>
 
   <div class="field">

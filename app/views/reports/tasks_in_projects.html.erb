@@ -1,0 +1,20 @@
+<h3>All projects tasks:</h3>
+<h4>
+  <% @projects.each do |t| %>
+    <table>
+      <tr>
+        <td> Name: "<%= t.name %>" Tasks: "<%= t.tasks.size %>"</td>
+      </tr>
+      <tr>
+        <td>Open: <%= t.tasks.open.count %></td>
+      </tr>
+      <tr>
+        <td>In progress: <%= t.tasks.in_progress.count %></td>
+      </tr>
+      <tr>
+        <td>Done: <%= t.tasks.done.count %></td>
+      </tr>
+    </table>
+    <p>-----------------------------</p>
+  <% end %></h4>
+<p><%= paginate @projects %></p>

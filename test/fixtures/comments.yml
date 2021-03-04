@@ -2,12 +2,12 @@
 
 one:
   content: MyText
-  references: 
-  references: 
-  references: 
+  references:
+  references:
+  references:
 
 two:
   content: MyText
-  references: 
-  references: 
+  references:
+  references:
   references: 

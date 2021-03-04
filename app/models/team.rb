@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+  include CanCan::Ability
   has_many :projects
   has_many :users
 

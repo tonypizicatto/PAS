@@ -14,9 +14,10 @@
             <%= link_to "Dashboard", user_path %>
           <li><%= link_to "Projects", projects_path %></li>
           <li><%= link_to "Tasks", user_tasks_path %></li>
-          <li><% if can? :read, @team %>
-              <%= link_to "Teams", teams_path %>
-              <% end %></li>
+          <% if can? :read, @team %>
+            <li> <%= link_to "Teams", teams_path %></li>
+            <li> <%= link_to "Reports", reports_path %></li>
+          <% end %>
         <% else %>
           <%= link_to "Dashboard", root_path %>
         <% end %></li>
