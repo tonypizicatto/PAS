@@ -6,4 +6,9 @@
   <li><h4>Start date: <strong><%= @task.start_date %></strong></h4></li>
   <li><h4>Period of execution: <strong><%= @task.due_date %></strong></h4></li>
   <li><h4>Estimation: <strong><%= @task.estimation %> hours</strong></h4></li>
+  <% if @task.image.attached? %>
+    <%= image_tag @task.image.representation(resize: "100x100") %>
+  <% else %>
+    <strong>No image</strong>
+  <% end %>
 </div>

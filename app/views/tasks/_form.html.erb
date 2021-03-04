@@ -11,14 +11,16 @@
   </div>
 
   <div class="field">
-    <!--    <%#= f.label :status %><br>-->
-    <%#= f.text_field :status %>
     <%= f.radio_button :status, :open %>
     <%= f.label :status, "Open" %>
     <%= f.radio_button :status, :in_progress %>
     <%= f.label :status, "In progress" %>
     <%= f.radio_button :status, :done %>
     <%= f.label :status, "Done" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image %>
   </div>
 
   <div class="field">
@@ -41,8 +43,6 @@
     <%= f.hidden_field :project_id, value: @project.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
-
-  <!--  content: string, status: string, start_date: datetime, due_date: datetime, estimation: integer project_id: integer, user_id: integer-->
 
   <div class="actions">
     <%= f.submit "#{ @task.new_record? ? 'Create' : 'Edit'}" %>

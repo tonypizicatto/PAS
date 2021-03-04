@@ -19,8 +19,6 @@ class ReportsController < ApplicationController
   def set_parametrs
     @projects = Project.all.page(params[:page])
     @users = User.all.page(params[:page])
-    # @user_task = User.find(params[:id])
   end
 
-  #zadachi usera, kolvo vipolnenih zadach usera, kolvo taskov v proektah, kolichestvo zakritih i otkritih zadach
 end
