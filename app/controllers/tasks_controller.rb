@@ -36,6 +36,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, @task
     @task.destroy
     redirect_to project_tasks_path(@project)
   end

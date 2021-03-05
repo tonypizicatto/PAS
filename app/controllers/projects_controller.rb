@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @project
   end
 
   def show
@@ -35,6 +36,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, @project
     @project.destroy
     redirect_to projects_path
   end

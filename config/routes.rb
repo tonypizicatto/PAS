@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'reports/all_users_tasks'
   get 'reports/tasks_in_projects'
   get 'dashboard/index'
+  get 'dashboard/no_access'
   get 'about' => 'dashboard#about'
   get 'user' => 'user#index'
   get 'user_tasks' => 'tasks#user_tasks'

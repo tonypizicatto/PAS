@@ -17,10 +17,10 @@ class Ability
       can :create, Comment
       can :create, Task
       # can :edit, Project, user_id: user.id
-      # can :edit, Comment, user_id: user.id
+      can :edit, Comment, user_id: user.id
       can :edit, Task, user_id: user.id
       # can :delete, Project, user_id: user.id
-      # can :delete, Comment, user_id: user.id
+      can :delete, Comment, user_id: user.id
       # can :delete, Task, user_id: user.id
 
     end
