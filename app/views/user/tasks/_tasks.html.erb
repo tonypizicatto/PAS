@@ -5,7 +5,7 @@
     <li><h6>Status: <strong><%= t.status %></strong></h6></li>
     </h3>
     <div class="task_show">
-      <h6><%= link_to 'More details', project_task_path(t.project_id, t.id), remote: true %> </h6>
+      <h6><%= link_to 'More details', project_task_path(t.project_id, t.id) %> </h6>
     </div>
     <p>---------</p>
   <% end %>
