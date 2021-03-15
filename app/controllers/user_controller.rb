@@ -2,7 +2,7 @@ class UserController < ApplicationController
   def new
   end
 
-  def index
+  def index 
     @user = current_user
   end
 
