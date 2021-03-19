@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  paginates_per 1
+  paginates_per 20
   include CanCan::Ability
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable

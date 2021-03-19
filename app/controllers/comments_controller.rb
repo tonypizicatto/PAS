@@ -2,33 +2,18 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_commentable, only: :create
 
-  # def create
-  #   @comment = current_user.comments.build(comment_params)
-  #   if @comment.save
-  #     redirect_back(fallback_location: root_path)
-  #   else
-  #     redirect_to request.referrer, notice: "Something wrong!"
-  #   end
-  # end
-  #
-  # def destroy
-  # end
-
   def show
     @comment = Comment.find(params[:id])
-  end
-
-  def new
-    @comment = Comment.new
   end
 
   def create
     @comment = @commentable.comments.new(comment_params)
 
+
     if @comment.save
-      redirect_to request.referrer, notice: 'Your comment was successfully posted!'
+      redirect_to request.referrer.to_s, notice: 'Your comment was successfully posted!'
     else
-      redirect_to request.referrer, notice: "Your comment wasn't posted!"
+      redirect_to request.referrer.to_s, notice: "Your comment wasn't posted!"
     end
   end
 

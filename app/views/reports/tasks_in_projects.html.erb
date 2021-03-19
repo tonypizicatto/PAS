@@ -1,21 +1,41 @@
-<h3>All projects tasks:</h3>
+<h3>All projects tasks:</h3>  <%# @projects.each do |t| %>
+<!--    <table>-->
+<!--      <tr>-->
+<!--        <td> Name: "<%#= t.name %>" Tasks: "<%#= t.tasks.size %>"</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Open: <%#= t.tasks.open.count %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>In progress: <%#= t.tasks.in_progress.count %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Done: <%#= t.tasks.done.count %></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--    <p>-----------------------------</p>-->
+<!--  <%# end %></h4>-->
 <h4>
-  <% @projects.each do |t| %>
-    <table>
+  <div class="table">
+    <table border="1">
       <tr>
-        <td> Name: "<%= t.name %>" Tasks: "<%= t.tasks.size %>"</td>
+        <th>Name:</th>
+        <th>Tasks:</th>
+        <th>Open:</th>
+        <th>In progress:</th>
+        <th>Done:</th>
       </tr>
-      <tr>
-        <td>Open: <%= t.tasks.open.count %></td>
-      </tr>
-      <tr>
-        <td>In progress: <%= t.tasks.in_progress.count %></td>
-      </tr>
-      <tr>
-        <td>Done: <%= t.tasks.done.count %></td>
-      </tr>
+      <% @projects.each do |t| %>
+        <tr>
+          <td><%= t.name %></td>
+          <td><%= t.tasks.size %></td>
+          <td><%= t.tasks.open.count %></td>
+          <td><%= t.tasks.in_progress.count %></td>
+          <td><%= t.tasks.done.count %></td>
+        </tr>
+      <% end %>
     </table>
-    <p>-----------------------------</p>
-  <% end %></h4>
+  </div>
+</h4>
 <%= link_to "Back", reports_path %>
 <p><%= paginate @projects %></p>

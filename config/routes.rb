@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/no_access'
   get 'about' => 'dashboard#about'
-  get 'user' => 'user#index'
+  get 'user' => 'user#show'
   get 'user_tasks' => 'tasks#user_tasks'
 
   root 'dashboard#index'

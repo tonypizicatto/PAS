@@ -1,19 +1,15 @@
-require 'rails_helper'
-
 RSpec.describe UserController do
 
-  # let(:user) { build(:user) }
-  # it "assigns @user" do
-  #   get :index
-  #   expect(assigns(:user)).to eq([user])
-  # end
+  describe "#show" do
+    let(:user) { create(:user) }
 
-  describe "render templates" do
-
-    it "renders the index template" do
-      get :index
-      expect(response).to render_template(:index)
+    before do
+      sign_in(user)
+      get :show, params: { id: user.id }
     end
-end
+
+    it { expect(response).to render_template(:show) }
+    it { expect(assigns(:user)).to eq(user) }
+  end
 
 end

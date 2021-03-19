@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  paginates_per 3
+  paginates_per 20
   include CanCan::Ability
   has_many :teams
   has_many :tasks, dependent: :destroy

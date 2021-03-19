@@ -9,6 +9,11 @@ FactoryBot.define do
     trait :with_team do
       team { create :team }
     end
+
+    trait :admin do
+      admin { true }
+    end
+
     after(:build) do |u|
       u.skip_confirmation!
     end

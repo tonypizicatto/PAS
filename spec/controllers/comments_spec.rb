@@ -1,23 +1,32 @@
-require 'rails_helper'
+describe CommentsController do
+  context "when user logged in" do
+    let(:comment) { create(:project_comment) }
+    let(:user) { comment.user }
 
-RSpec.describe CommentsController do
-
-  describe "render templates" do
-
-    it "renders the new template" do
-      get :new
-      expect(response).to render_template(:new)
+    before do
+      sign_in(user)
     end
 
-    it "renders the create template" do
-      post :create
-      expect(response).to render_template(:create)
+    describe "#create" do
+      let(:project) { create(:project) }
+      let(:parameters) do
+        { comment: { commentable_type: 'Project', commentable_id: project.id, content: '123', user_id: user.id }}
+      end
+      subject { get :create, params: parameters }
+
+      it { is_expected.to be_redirect }
+
+      context 'when comment is invalid' do
+        let(:parameters) { { comment: { commentable_type: 'Project', commentable_id: project.id, user_id: user.id }}}
+
+        it { is_expected.to be_redirect }
+      end
     end
 
-    it "renders the show template" do
-      get :show
-      expect(response).to render_template(:show)
-    end
+    describe "#show" do
+      subject { get :show, params: { id: comment.id } }
 
+      it { is_expected.to render_template(:show) }
+    end
   end
 end
