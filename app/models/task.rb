@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  paginates_per 2
+  paginates_per 20
   include CanCan::Ability
   belongs_to :project
   belongs_to :user

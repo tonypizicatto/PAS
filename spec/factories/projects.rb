@@ -4,7 +4,7 @@ FactoryBot.define do
     summary  { Forgery('name').location }
     start_date { "06.01.2021" }
     end_date { "07.01.2021" }
-    user_id { Forgery(:basic).number(:at_least => 1, :at_most => 300) }
+    # user_id { Forgery(:basic).number(:at_least => 1, :at_most => 300) }
     # user { create(:user) }
   end
 end

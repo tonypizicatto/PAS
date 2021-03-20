@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'factory_bot_rails'
 300.times do
-  FactoryBot.create :task
+  FactoryBot.create :comment
 end
