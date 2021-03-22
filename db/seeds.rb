@@ -8,11 +8,21 @@
 require 'factory_bot_rails'
 300.times do
   FactoryBot.create :team
+end
+300.times do
   FactoryBot.create :user, :random_team
+end
+300.times do
   FactoryBot.create :random_project
+end
+300.times do
   FactoryBot.create :task_without_user, :random_user_project
-  FactoryBot.create :comment, :random_project
+end
+300.times do
   FactoryBot.create :comment, :random_task
+end
+300.times do
+  FactoryBot.create :comment, :random_project
 end
 1.times do
   FactoryBot.create :user, :random_team_admin
