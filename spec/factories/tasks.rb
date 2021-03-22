@@ -10,8 +10,8 @@ FactoryBot.define do
     user { create(:user) }
 
     trait :random_user_project do
-      user_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
-      project_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
+      user_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
+      project_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
     end
   end
 
@@ -24,8 +24,8 @@ FactoryBot.define do
     estimation { Forgery(:basic).number(at_least: 1, at_most: 10) }
 
     trait :random_user_project do
-      user_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
-      project_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
+      user_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
+      project_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
     end
   end
 end
