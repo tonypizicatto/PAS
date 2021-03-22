@@ -2,12 +2,22 @@ FactoryBot.define do
   factory :user, class: 'User' do
     first_name { Forgery(:name).first_name }
     last_name  { Forgery(:name).last_name }
-    password { Forgery(:basic).password }
+    password { 123456 }
     admin { false }
     email { Forgery(:email).address }
 
     trait :with_team do
       team { create :team }
+    end
+
+    trait :random_team do
+      team_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
+    end
+
+    trait :random_team_admin do
+      team_id { Forgery(:basic).number(at_least: 1, at_most: 300) }
+      admin { true }
+      password { 654321 }
     end
 
     trait :admin do

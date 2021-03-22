@@ -4,6 +4,4 @@ class UserController < ApplicationController
     @user = current_user
   end
 
-  class RegistrationsController < Devise::RegistrationsController
-  end
 end

@@ -1,10 +1,17 @@
 FactoryBot.define do
   factory :project, class: 'Project' do
-    name { Forgery('name').location }
+    name { Forgery('name').company_name }
     summary  { Forgery('name').location }
     start_date { "06.01.2021" }
     end_date { "07.01.2021" }
-    # user_id { Forgery(:basic).number(:at_least => 1, :at_most => 300) }
-    # user { create(:user) }
+    user { create(:user) }
+  end
+
+  factory :random_project, class: 'Project' do
+    name { Forgery('name').company_name }
+    summary  { Forgery('name').location }
+    start_date { "06.01.2021" }
+    end_date { "07.01.2021" }
+    user_id { Forgery(:basic).number(:at_least => 1, :at_most => 300) }
   end
 end

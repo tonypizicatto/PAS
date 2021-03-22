@@ -7,5 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'factory_bot_rails'
 300.times do
-  FactoryBot.create :comment
+  FactoryBot.create :team
+  FactoryBot.create :user, :random_team
+  FactoryBot.create :random_project
+  FactoryBot.create :task_without_user, :random_user_project
+  FactoryBot.create :comment, :random_project
+  FactoryBot.create :comment, :random_task
+end
+1.times do
+  FactoryBot.create :user, :random_team_admin
 end
