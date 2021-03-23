@@ -14,8 +14,7 @@ FactoryBot.define do
       team_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
     end
 
-    trait :random_team_admin do
-      team_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
+    trait :production_admin do
       admin { true }
       password { 654321 }
     end

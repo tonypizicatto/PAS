@@ -48,4 +48,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  url: mysql2://b8622c68b41d0a:510379f9@us-cdbr-east-03.cleardb.com/heroku_567eabc1d9bc221?reconnect=true
+  url: mysql2://b5ac3c41edd9c4:554f36e4@us-cdbr-east-03.cleardb.com/heroku_6de22dab4d3b741?reconnect=true

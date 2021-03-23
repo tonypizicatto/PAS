@@ -7,7 +7,7 @@ FactoryBot.define do
     due_date { "07.01.2021" }
     estimation { Forgery(:basic).number(at_least: 1, at_most: 10) }
     project { create(:project) }
-    user { create(:user) }
+    users { [create(:user)] }
 
     trait :random_user_project do
       user_id { Forgery(:basic).number(at_least: 1, at_most: 200) }
