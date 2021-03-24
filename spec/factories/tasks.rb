@@ -24,8 +24,8 @@ FactoryBot.define do
     estimation { Forgery(:basic).number(at_least: 1, at_most: 10) }
 
     trait :random_user_project do
-      title { Forgery('name').company_name + rand(1..100).to_s }
-      content  { Forgery('name').industry + rand(1..100).to_s }
+      title { Forgery('name').company_name + rand(1..1000).to_s }
+      content  { Forgery('name').industry + rand(1..1000).to_s }
       status { Forgery(:basic).number(at_least: 0, at_most: 2) }
       start_date { "06.01.2021" }
       due_date { "07.01.2021" }
