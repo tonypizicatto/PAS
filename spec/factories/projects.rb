@@ -8,8 +8,8 @@ FactoryBot.define do
   end
 
   factory :random_project, class: 'Project' do
-    name { Forgery('internet').ip_v6 }
-    summary  { Forgery('name').location }
+    name { Forgery('name').company_name + rand(1..100).to_s }
+    summary  { Forgery('name').industry + rand(1..100).to_s }
     start_date { "06.01.2021" }
     end_date { "07.01.2021" }
   end

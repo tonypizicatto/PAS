@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user, class: 'User' do
-    first_name { Forgery(:name).first_name }
+    first_name { Forgery(:name).first_name + rand(1..100).to_s }
     last_name  { Forgery(:name).last_name }
     password { 123456 }
     admin { false }

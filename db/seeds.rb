@@ -26,7 +26,7 @@ end
 project_ids = Project.pluck(:id)
 
 200.times do
-    FactoryBot.create(:task_without_user, user_id: user_ids.sample, project_id: project_ids.sample)
+    FactoryBot.create(:random_user_project, user_id: user_ids.sample, project_id: project_ids.sample)
 end
 
 task_ids = Task.pluck(:id)
@@ -42,6 +42,15 @@ end
 1.times do
     FactoryBot.create(:user, :production_admin, team_id: team_ids.sample)
 end
+
+
+
+
+
+
+
+
+
 
 # 200.times do
 #   FactoryBot.create :team
