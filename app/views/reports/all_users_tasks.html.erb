@@ -1,16 +1,16 @@
 <h3>All users tasks:</h3>
 <h4>
-    <div class="table">
-      <table border="1">
-        <tr>
-          <th>Name:</th>
-          <th>ID:</th>
-          <th>Tasks:</th>
-          <th>Open:</th>
-          <th>In progress:</th>
-          <th>Done:</th>
-        </tr>
-        <% @users.each do |t| %>
+  <div class="table">
+    <table border="1">
+      <tr>
+        <th>Name:</th>
+        <th>ID:</th>
+        <th>Tasks:</th>
+        <th>Open:</th>
+        <th>In progress:</th>
+        <th>Done:</th>
+      </tr>
+      <% @users.each do |t| %>
         <tr>
           <td><%= t.first_name %></td>
           <td><%= t.id %></td>
@@ -19,9 +19,9 @@
           <td><%= t.tasks.in_progress.count %></td>
           <td><%= t.tasks.done.count %></td>
         </tr>
-        <% end %>
-      </table>
-    </div>
-  </h4>
+      <% end %>
+    </table>
+  </div>
+</h4>
 <%= link_to "Back", reports_path %>
 <p><%= paginate @users %></p>

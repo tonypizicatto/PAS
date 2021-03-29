@@ -1,3 +1,2 @@
- ======= Project accounting system. This
-project maked for test task.
+======= Project accounting system. This project maked for test task.
 

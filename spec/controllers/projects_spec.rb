@@ -1,14 +1,15 @@
 RSpec.describe ProjectsController do
   context "when user logged in" do
-    let(:user) { create(:user) }
-    let(:project) { create(:project, user_id: user.id) }
+    let(:task) { create(:task) }
+    let(:user) { task.user }
+    let(:project) { task.project }
 
     before do
       sign_in(user)
     end
 
     describe "#index" do
-      before { get :index, params: { user_id: user.id } }
+      before { get :index }
 
       it { expect(response).to render_template(:index) }
       it { expect(assigns(:projects)).to include(project) }
@@ -24,7 +25,7 @@ RSpec.describe ProjectsController do
     describe "#create" do
       let(:parameters) do
         {
-          project: attributes_for(:project).merge(user_id: user.id)
+          project: attributes_for(:project)
         }
       end
       subject { post :create, params: parameters }
@@ -39,11 +40,7 @@ RSpec.describe ProjectsController do
     end
 
     describe "#edit" do
-      before { get :edit, params: { id: project.id, user_id: user.id } }
-
-      # it "returns incorrect status" do
-      #   expect{ get :edit }.to raise_error(CanCan::AccessDenied)
-      # end
+      before { get :edit, params: { id: project.id } }
 
       context "when user admin" do
         let(:user) { create(:user, :admin) }
@@ -55,23 +52,20 @@ RSpec.describe ProjectsController do
     end
 
     describe "#show" do
-      before { get :show, params: { id: project.id, user_id: user.id } }
+      before { get :show, params: { id: project.id } }
 
       it { expect(response).to render_template(:show) }
-      #komments show?
       it { expect(assigns(:project)).to eq(project) }
     end
 
     describe "#update" do
       let(:name) { "lolita" }
-      # let(:project) { create(:project, user_id: user.id) }
       let(:parameters) do
         {
-          project: { name: name, user_id: user.id }
+          project: { name: name }
         }.merge(id: project.id)
       end
       before { put :update, params: parameters }
-      # before { put :update, params: { name: name, id: project.id } }
 
       it { expect(project.reload.name).to eq(name) }
       it { expect(response).to be_redirect }
@@ -88,8 +82,6 @@ RSpec.describe ProjectsController do
         delete :destroy, params: { project_id: project.id, id: project.id }
         sign_in(user)
       end
-
-      # it { expect(:destroy).to raise(CanCan::AccessDenied) }
 
       describe "when user admin" do
         let(:user) { create(:user, :admin) }

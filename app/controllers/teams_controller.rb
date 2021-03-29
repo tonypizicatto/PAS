@@ -59,5 +59,4 @@ class TeamsController < ApplicationController
   def check_permissions
     redirect_to dashboard_no_access_path unless current_user.admin?
   end
-
 end

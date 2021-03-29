@@ -12,8 +12,8 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { minimum: 5, maximum: 250 }, format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
 
-  has_many :projects
-  has_many :tasks, through: :projects
+  has_many :tasks
+  has_many :projects, through: :tasks
   has_many :comments, dependent: :destroy
   belongs_to :team, optional: true
 

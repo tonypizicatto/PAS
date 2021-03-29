@@ -6,10 +6,10 @@ RSpec.describe User, type: :model do
 
   describe '#downcase_email' do
     before { user.email = 'UPPERCASEDEMAIL@EMAIL.HUI' }
-      it 'makes email downcased' do
-        user.save
-        expect(user.email).to eq('uppercasedemail@email.hui')
-      end
+    it 'makes email downcased' do
+      user.save
+      expect(user.email).to eq('uppercasedemail@email.hui')
+    end
   end
 
   describe '#VALID_EMAIL_REGEX' do
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#name' do
-    it 'check user full name'do
+    it 'check user full name' do
       expect(user.name).to eq(user.first_name + ' ' + user.last_name)
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
     let(:user) { create(:user, team: team) }
     let(:team) { create(:team) }
 
-    it 'check user full name'do
+    it 'check user full name' do
       expect(user.team_name).to eq(team.name)
     end
 

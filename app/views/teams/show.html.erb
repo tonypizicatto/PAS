@@ -10,7 +10,7 @@
   <h5><%= link_to 'Edit', edit_team_path(@team.id) %></h5>
 <% end %>
 <% if can? :delete, @team %>
-  <h5><%= link_to 'Delete', @team, :method => :delete, data: { :confirm => "You sure?" },
-                  :title => "Delete #{@team.name}" %></h5>
+  <h5><%= link_to 'Delete', @team, method: :delete, data: { confirm: "You sure?" },
+                  title: "Delete #{@team.name}" %></h5>
 <% end %>
 <%= link_to 'Back', teams_path %>

@@ -80,17 +80,17 @@ RSpec.describe TasksController do
         sign_in(user)
       end
 
-        let(:project) { create(:project) }
-        let(:user) { create(:user, :admin) }
-        let(:task) { create(:task_without_user, user: user, project: project) }
+      let(:project) { create(:project) }
+      let(:user) { create(:user, :admin) }
+      let(:task) { create(:task_without_user, user: user, project: project) }
 
-        before do
-          sign_in(user)
-        end
+      before do
+        sign_in(user)
+      end
 
-        it { expect(response).to be_redirect }
-        it { expect(assigns(:project)).to eq(project) }
-        it { expect(assigns(:task)).to eq(task) }
+      it { expect(response).to be_redirect }
+      it { expect(assigns(:project)).to eq(project) }
+      it { expect(assigns(:task)).to eq(task) }
     end
   end
 end

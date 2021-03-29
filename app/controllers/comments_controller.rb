@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
 
-
     if @comment.save
       redirect_to request.referrer.to_s, notice: 'Your comment was successfully posted!'
     else
