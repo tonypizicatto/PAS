@@ -4,7 +4,7 @@ class User < ApplicationRecord
   paginates_per 20
   include CanCan::Ability
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable#, :confirmable
 
   before_save :downcase_email
   validates :first_name, :last_name, presence: true, length: { maximum: 50 }
