@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'about' => 'dashboard#about'
   get 'user' => 'user#show'
   get 'user_tasks' => 'tasks#user_tasks'
+  get 'tz' => 'dashboard#tz'
 
   root 'dashboard#index'
 
